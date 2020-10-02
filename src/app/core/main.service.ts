@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { PetitionGet, Api } from './petition-get';
 
-const apiUrl = 'https://api.siclo.com/api/v2/plus/instructors/?page_size=-1';
+const apiUrl = 'https://api.siclo.com/api/v2/plus/instructors/?page_size=10';
 
 @Injectable({
   providedIn: 'root'
