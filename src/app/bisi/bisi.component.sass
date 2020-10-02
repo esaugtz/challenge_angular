@@ -1,0 +1,83 @@
+@import ../../styles.sass
+
+.bisi-container
+    padding: 3em 0
+
+.image
+    display: flex
+    justify-content: center
+    img
+        width: 70%
+
+.bg-diagonal
+    position: relative
+    padding: 6em 0
+.bg-diagonal:before
+    content: ""
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    transform: skewy(-11deg)
+    transform-origin: 50% 0
+    outline: 1px solid transparent
+    backface-visibility: hidden
+
+.one:before
+  background-image: linear-gradient(45deg, #88fcfe, #bdfcc5)
+
+.two:before
+  background-image: linear-gradient(45deg, #d7ec6c, #b6fccc)
+
+.content
+    max-width: 50em
+    margin: 0 auto
+    padding: 1.5em
+    position: relative
+    color: #888888
+
+.intro
+    text-align: center
+    padding: 0 0 3em
+    max-width: 42rem
+
+h1
+    line-height: 1.2
+    font-size: 5em
+    color: #afe45b
+
+h1, h2, h3
+    margin: 0
+
+h2, h3
+    color: #8a8a8a
+    font-size: 1.5em
+
+.bottom
+    margin-top: 8em
+    display: flex
+    align-items: center
+    .img-bottom
+        max-width: 33.3%
+        padding: 40px
+        img
+            width: 100%
+            border-radius: 50%
+
+button
+    margin: 2em 0 0
+    padding: 1em 2.5em
+    border: 0
+    background: #d7fc92
+    text-transform: uppercase
+    cursor: pointer
+    -webkit-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.5)
+    -moz-box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.5)
+    box-shadow: 0px 10px 15px -10px rgba(0,0,0,0.5)
+    border-radius: 20px
+    &:hover
+        background: #25c8ca
+        color: #ffffff
+
+
