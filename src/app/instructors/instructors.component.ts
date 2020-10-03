@@ -30,7 +30,7 @@ export class InstructorsComponent implements OnInit {
     }
     this.mainService.getPetition(getInstructors).then(response => {
       console.log(response);
-      
+      this.data = response.data;
     });    
   }
 

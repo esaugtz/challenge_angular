@@ -14,14 +14,51 @@ h1
     margin-top: 8em
     display: flex
     align-items: center
+    flex-wrap: wrap
     .card
-        width: 45%
+        width: 33%
         padding: 20px
-        margin: 0 30px 30px 0
-        height: 470px
+        margin: 0 50px 45px 0
+        height: 435px
+        flex-grow: 1
         background: #fffef6
         transition: background .6s ease
         border-radius: 10px
-        -webkit-box-shadow: 0px 7px 15px rgba(132,132,132,0.5)
-        -moz-box-shadow: 0px 7px 15px rgba(132,132,132,0.5)
+        -webkit-box-shadow: 2px 3px 5px rgba(132,132,132,0.3)
+        -moz-box-shadow: 2px 3px 5px rgba(132,132,132,0.3)
+        box-shadow: 2px 3px 5px rgba(132,132,132,0.3)
+
+.member
+    margin-top: 2em
+    position: relative
+    .image
+        width: 140px
+        height: 140px
+        display: flex
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 1.5em
+        border-radius: 100%
         box-shadow: 0px 7px 15px rgba(132,132,132,0.5)
+    .name
+        color: #2D354A
+        font-size: 24px
+        font-weight: 600
+        text-align: center
+    .description
+        color: #080911
+        font-size: 14px
+        font-weight: 300
+        text-align: center
+        margin-bottom: 1.3em
+    button
+        display: flex
+        margin: 3em autoç
+
+.controls
+    display: flex
+    margin: 0 0 5em
+    align-items: center
+    justify-content: center
+    button
+        margin-right: 40px
