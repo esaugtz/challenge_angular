@@ -10,28 +10,39 @@ import { PetitionGet } from '../core/petition-get';
 })
 export class InstructorsComponent implements OnInit {
 
-  public data = [];
+  public links = [];
+  public instructors = [];
 
   constructor(private mainService: MainService,) { }
 
   ngOnInit(): void {
-    this.getInstructors();
+    this.getInstructors('https://api.siclo.com/api/v2/plus/instructors/?page_size=10');
   }
 
   /**
    * Petición Get
    * Puede llevar parámetros para que se reciban en el service
    */
-  getInstructors(): void {
+  getInstructors(url): void {
     const getInstructors: PetitionGet = {
       petitionName: 'Get Instructors',
-      path: '',
+      path: url,
       mensaje: 'Cargando instructores'
     }
     this.mainService.getPetition(getInstructors).then(response => {
       console.log(response);
-      this.data = response.data;
+      this.links = response.data.links;
+      this.instructors = response.data.results;
     });    
+  }
+
+  next(links) {
+    console.log(links);
+    const path = links.next.split('//')[1];
+    console.log(path);
+    this.links = [];
+    this.instructors = [];
+    this.getInstructors(`https://${path}`);
   }
 
 }

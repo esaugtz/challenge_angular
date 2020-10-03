@@ -4,11 +4,11 @@
     </div>
 
     <div class="cards">
-        <div class="card" *ngFor="let instructor of data.results">
+        <div class="card" *ngFor="let instructor of instructors">
             <div class="member">
                 <img [src]="instructor.face_photo" class="image">
                 <h3 class="name">{{instructor.nombre}}</h3>
-                <p class="description">{{instructor.interests.philosophy}}</p>
+                <p class="description">{{instructor.interests?.philosophy}}</p>
                 <button class="action-btn">Ver perfil</button>
             </div>
         </div>
@@ -16,6 +16,6 @@
 
     <div class="controls">
         <button class="action-btn">Anterior</button>
-        <button class="action-btn">Siguiente</button>
+        <button class="action-btn" (click)="next(links)">Siguiente</button>
     </div>
 </div>

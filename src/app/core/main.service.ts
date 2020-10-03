@@ -18,20 +18,20 @@ export class MainService {
    * Puede recibir Headers personalizados, o inyectar los definidos por default.
    * @param peticion de tipo PeticionGet
    */
-  getPetition(peticion: PetitionGet): Promise <any> {
-    const headersPeticion = peticion.headers ? new HttpHeaders(peticion.headers) : new HttpHeaders(
+  getPetition(petition: PetitionGet): Promise <any> {
+    const headersPeticion = petition.headers ? new HttpHeaders(petition.headers) : new HttpHeaders(
       {
         'Content-Type': 'application/json; charset=UTF-8'
       }
     );
-    const promisePeticionGet = new Promise((resolve, reject) => {
-      this.http.get(apiUrl, { headers: headersPeticion }).subscribe(okResponse => {
+    const promisePetitionGet = new Promise((resolve, reject) => {
+      this.http.get(petition.path, { headers: headersPeticion }).subscribe(okResponse => {
         resolve(okResponse);
       }, error => {
         reject(error);
       });
     });
-    return promisePeticionGet;
+    return promisePetitionGet;
   }
 
 }
