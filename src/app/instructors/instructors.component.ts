@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../core/main.service';
 import { PetitionGet } from '../core/petition-get';
-
+import { Links } from '../core/links';
 
 @Component({
   selector: 'app-instructors',
@@ -10,7 +10,7 @@ import { PetitionGet } from '../core/petition-get';
 })
 export class InstructorsComponent implements OnInit {
 
-  public links = [];
+  public links: Links;
   public instructors = [];
 
   constructor(private mainService: MainService,) { }
@@ -31,18 +31,20 @@ export class InstructorsComponent implements OnInit {
     }
     this.mainService.getPetition(getInstructors).then(response => {
       console.log(response);
-      this.links = response.data.links;
+      const links: Links = response.data.links;
+      this.links = links;
       this.instructors = response.data.results;
     });    
   }
 
-  next(links) {
-    console.log(links);
-    const path = links.next.split('//')[1];
+  movePage(path, dir) {
     console.log(path);
-    this.links = [];
+    const url = path[dir].split('//')[1];
+    console.log(url);
+    let clearLinks: Links;
+    this.links = clearLinks;
     this.instructors = [];
-    this.getInstructors(`https://${path}`);
+    this.getInstructors(`https://${url}`);
   }
 
 }

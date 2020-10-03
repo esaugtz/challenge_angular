@@ -14,8 +14,8 @@
         </div>
     </div>
 
-    <div class="controls">
-        <button class="action-btn">Anterior</button>
-        <button class="action-btn" (click)="next(links)">Siguiente</button>
+    <div class="controls" *ngIf="links">
+        <button class="action-btn" [disabled]="links && links.previous == null" (click)="movePage(links, 'previous')">Anterior</button>
+        <button class="action-btn" [disabled]="links && links.next == null" (click)="movePage(links, 'next')">Siguiente</button>
     </div>
 </div>
